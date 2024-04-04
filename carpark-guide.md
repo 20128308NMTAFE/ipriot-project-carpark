@@ -76,10 +76,11 @@ After reading the task requirements, you should be able to identify the classes,
 | `Sensor`     | sensorID, status, parkingBayAssigned | detectCar()                                                                     |
 | `Display`    | currentText                          | updateDisplay(availableParkingBays, currentWeather)                             |
 
-(CarParkManagement class)
+CarParkManagement class
 Attributes: parkingBayID, status
 Methods: updateStatus(), addSensor(), removeSensor()
 
+And we'd have a Car class too.
 
 **Evidencing:**
 Ensure you have completed the previous table and include at least two methods and attributes for each.
@@ -107,9 +108,7 @@ Ensure you have completed the previous table and include at least two methods an
 **Evidencing:**
 Include a screenshot of your GitHub repository `src/` directory **after** you have pushed your changes.
 
-```markdown
-![Added stubs for classes](images/stubs-for-classes.png)
-```
+![img_1.png](img_1.png)
 
 ### Add constructors and attributes to the classes
 

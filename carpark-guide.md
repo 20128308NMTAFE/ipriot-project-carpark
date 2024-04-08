@@ -368,31 +368,31 @@ Now consider, between the `CarPark`, `Sensor`, and `Display` classes, which clas
 
 >Q. Which class is responsible for the number of available bays (and why)?
 > 
-> The CarPark class. This is because the number of available bays is based upon the 
+> `The CarPark class. This is because the number of available bays is based upon the 
 > CarPark's 'capacity' and 'plates' values - encapsulation should be encouraged in OOP. 
 > The number of available bays is also directly relevant to the state of the car park, 
-> unlike Sensor or Display.
+> unlike Sensor or Display.`
 > 
 
 >Q. Which class is responsible for the current temperature (and why)?
 > 
-> There isn't a class currently setup to become responsible for gauging temperature.
+> `There isn't a class currently setup to become responsible for gauging temperature.
 > However, I believe that Sensor should be a viable option - by creating its own subclass that inherits and
 > is used to monitor the different temperatures of each carpark (sectioned to its own display).
 > This is because I think each class should focus on managing a single aspect: CarPark for collecting cars 
 > and vacancies, Display for displaying information, and Sensor for detecting changes and environment info.
-> Temparature for each carpark may vary based on shade, indoors, etc.
+> Temparature for each carpark may vary based on shade, indoors, etc.`
 > 
-> Display is also my second viable option, as any non-car related information could be gathered there - 
+> `Display is also my second viable option, as any non-car related information could be gathered there - 
 > as it Temperature will not be used elsewhere. This way, Sensor could be used just for detecting
-> car-related information.
+> car-related information.`
 
 >Q. Which class is responsible for the time (and why)?
 > 
-> Similar answer as above, mostly, but I think it should be Display. As it is more likely, in my opinion, 
-> that the time displayed for the carparks will all identical, regardless of their associated car park.
+> `Similar answer as above, mostly, but I think it should be Display. As it is more likely, in my opinion, 
+> that the time displayed for the carparks will all identical, regardless of their associated car park.`
 > 
-> However, Sensor may be appropriate if this isn't the case, for some reason.
+> `However, Sensor may be appropriate if this isn't the case, for some reason.`
 
 --------
 
@@ -460,26 +460,45 @@ This time, we will push the tag to the remote repository:
 
 Add a screenshot of the GitHub repository after pushing the tag, showing the CarPark class with the new methods:
 
-```markdown
-![Added methods to the car park class](images/methods-to-car-park.png)
-```
+![img_3.png](img_3.png)
+![img_4.png](img_4.png)
 
 Answer the following questions:
 > **Review Questions**
 >
 > 1. **Which class is responsible for each of the following pieces of information (and why)?**
+> 
 >    - _The number of available bays_  
->      `Answer here...`
+>      `The CarPark class is the one responsible for this, as the 'number of available bays' is now a property 
+>    of the class. This property relies on the 'capacity' and 'number of cars in the parking area' values
+>    which are in this same class.`
+>     
 >    - _The current temperature_  
->      `Answer here...`
+>      `There isn't a class actually responsible yet. Currently, we only have a dummy temperature value 
+>      - hardcoded in the CarPark's updateDisplay method, and this method is used during 
+>      - the Display's update method.`
+>        
 >    - _The time_  
->      `Answer here...`
+>      `This has not been implemented yet.`
 >
 > 2. **What is the difference between an attribute and a property?**  
->    `Answer here...`
+>    `An attribute is a value that is established as a part of a class. 
+> A property is a special kind of attribute that relies on a 'function-like' setup to prepare its value.
+> A property can be referenced the same way that an attribute is, and they are setup by declaring a method
+> in the class with a @property decorator.` 
 >
-> 3. **Why do you think we used a dictionary to hold the data we passed the display? List at least one advantage and one disadvantage of this approach.**  
->    `Answer here...`
+> 3. **Why do you think we used a dictionary to hold the data we passed the display? List at least one advantage and
+> one disadvantage of this approach.**  
+>    `It allowed us to collect, label, and pass the data that we wanted to have appear on the display.` 
+> 
+> `One potential advantage is that the label (key) that we used is helpful for understanding 
+> each element of the contents, and it allows for a suitable label to be displayed easily by just using
+> print() on the dictionary value pairs.`
+> 
+> `One potential disadvantage is that the keys of a dictionary typically need to be known (by developers) 
+> to avoid problems or inconsistencies. For example, not knowing that the the key for the parking spots
+> value is "Bays", instead of "spots" etc, could lead to errors in the update() method if more code
+> specific to the Bays value is added.`
 
 #### Add a detect vehicle method to the Sensor class
 

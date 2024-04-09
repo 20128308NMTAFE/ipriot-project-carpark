@@ -5,6 +5,7 @@ class CarPark:
     def __init__(self,
                  location,
                  capacity,
+                 #log_file = 'log.txt',
                  plates = None,
                  sensors = None,
                  displays = None):

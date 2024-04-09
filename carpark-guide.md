@@ -756,6 +756,8 @@ available_bays property:`
 `And the tests still pass:`
 ![img_8.png](img_8.png)
 
+![img_14.png](img_14.png)
+
 2. Commit your changes to the local repository. Tag the commit with `s6` so your lecturer can find it:
 3. Push the tag to the remote repository:
 
@@ -811,9 +813,24 @@ Next, we'll create tests for the `Display` class. These tests will test the `__i
 
 1. Add a screenshot of the output of the unit tests. If any failed, add a screenshot of the error message and a screenshot after you have fixed the errors:
 
-   ```markdown
-   ![Unit tests](images/unit-tests-display.png)
-   ```
+`Output of initial unit tests:`
+
+![img_9.png](img_9.png)
+
+`The code I initially had in the Display class' update method wasn't updating the attributes properly, causing the test above to fail.`
+
+![img_10.png](img_10.png)
+
+`I made the additions to the code so that attributes are updated according to the value associated with a key of the same name.`
+
+![img_11.png](img_11.png)
+
+`Resulting in all unit tests now passing.`
+
+![img_12.png](img_12.png)
+
+![img_13.png](img_13.png)
+
 
 2. Commit your changes to the local repository. Tag the commit with `s7` so your lecturer can find it.
 3. Push the tag to the remote repository.

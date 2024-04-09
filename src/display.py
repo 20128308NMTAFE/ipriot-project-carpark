@@ -15,3 +15,7 @@ class Display:
     def update(self, data):
         for key, value in data.items():
             print(f"{key}: {value}")
+            try:
+                setattr(self, key, value)
+            except AttributeError:
+                pass

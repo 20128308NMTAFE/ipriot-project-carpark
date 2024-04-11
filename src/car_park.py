@@ -58,7 +58,6 @@ class CarPark:
         self.update_displays()
         self._log_car_activity(plate, "entered")
 
-
     def remove_car(self, plate):
         self.plates.remove(plate)
         self.update_displays()

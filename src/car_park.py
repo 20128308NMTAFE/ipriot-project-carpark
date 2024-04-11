@@ -8,7 +8,7 @@ class CarPark:
     def __init__(self,
                  location,
                  capacity,
-                 log_file = 'log.txt',
+                 log_file = Path('log.txt'),
                  plates = None,
                  sensors = None,
                  displays = None):
@@ -49,19 +49,21 @@ class CarPark:
         elif isinstance(component, Display):
             self.displays.append(component)
 
-    def _log_car(self, action, plate):
-        with self.log_file.open(mode='a') as file:
-            file.write(f'{plate} {action} on the {datetime.now().strftime("%d-%m %H:%M")}\n')
+    def _log_car_activity(self, plate, action):
+        with self.log_file.open("a") as f:
+            f.write(f"{plate} {action} at {datetime.now():%Y-%m-%d %H:%M:%S}\n")
 
     def add_car (self, plate):
         self.plates.append(plate)
-        self._log_car("entered", plate)
         self.update_displays()
+        self._log_car_activity(plate, "entered")
+
 
     def remove_car(self, plate):
         self.plates.remove(plate)
-        self._log_car("exited", plate)
         self.update_displays()
+        self._log_car_activity(plate, "exited")
+
 
     def update_displays(self):
         for display in self.displays:

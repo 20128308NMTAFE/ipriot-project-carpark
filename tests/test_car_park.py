@@ -55,7 +55,7 @@ class TestCarPark(unittest.TestCase):
         self.assertTrue(Path("new_log.txt").exists())
 
 
-    '''def test_car_logged_when_entering(self):
+    def test_car_logged_when_entering(self):
         new_carpark = CarPark("123 Example Street", 100,
                               log_file="new_log.txt")  # TODO: change this to use a class attribute or new instance variable
         self.car_park.add_car("NEW-001")
@@ -74,7 +74,7 @@ class TestCarPark(unittest.TestCase):
             last_line = f.readlines()[-1]
         self.assertIn(last_line, "NEW-001")  # check plate entered
         self.assertIn(last_line, "exited")  # check description
-        self.assertIn(last_line, "\n")  # check entry has a new line'''
+        self.assertIn(last_line, "\n")  # check entry has a new line
 
     def tearDown(self):
         Path("new_log.txt").unlink(missing_ok=True)
